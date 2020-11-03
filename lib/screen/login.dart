@@ -30,6 +30,27 @@ class _LoginState extends State<Login> {
   //         materialPageRoute, (Route<dynamic> route) => false);
   //   }
   // }
+
+  Future<void> normalDialog(BuildContext context, String message) async {
+    showDialog(
+      context: context,
+      builder: (context) => SimpleDialog(
+        title: Text(message),
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              FlatButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text('Ok'),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
   Future<void> checkAuthan() async {
     FirebaseAuth firebaseAuth = FirebaseAuth.instance;
     await firebaseAuth
@@ -40,6 +61,9 @@ class _LoginState extends State<Login> {
           MaterialPageRoute(builder: (BuildContext context) => Home());
       Navigator.of(context).pushAndRemoveUntil(
           materialPageRoute, (Route<dynamic> route) => false);
+    }).catchError((response) {
+      //print('ไม่ผ่าน');
+      normalDialog(context, 'ไม่ข้อมูลในระบบ');
     });
   }
 
@@ -91,9 +115,10 @@ class _LoginState extends State<Login> {
                 usename.isEmpty ||
                 password == null ||
                 password.isEmpty) {
-              normalDialog(context, 'มีช่องว่าง');
+              normalDialog(context, 'Please fill in all fields.');
+            } else {
+              checkAuthan();
             }
-            checkAuthan();
           },
           child: Text(
             'Login',

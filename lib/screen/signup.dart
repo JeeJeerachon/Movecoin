@@ -58,11 +58,9 @@ class _SignupState extends State<Signup> {
                 repassword == null ||
                 repassword.isEmpty) {
               normalDialog(context, 'มีช่องว่าง');
-            }
-            if (password != repassword) {
+            } else if (password != repassword && password.length >= 6) {
               normalDialog(context, 'รหัสไม่ตรงกัน');
-            }
-            if (formKey.currentState.validate()) {
+            } if (formKey.currentState.validate()) {
               formKey.currentState.save();
               print(
                   'username == $username, password == $password, repassword == $repassword');
@@ -82,12 +80,16 @@ class _SignupState extends State<Signup> {
         .createUserWithEmailAndPassword(email: username, password: password)
         .then((response) {
       print('success signup = $username');
+      MaterialPageRoute
+          materialPageRoute =
+          MaterialPageRoute(builder: (BuildContext context) => Login());
+      Navigator.of(context).pushAndRemoveUntil(
+          materialPageRoute,
+          (Route<dynamic> route) => false);
       // setupDisplayname();
-    }).catchError((response) {
-      String title = response.code;
-      String message = response.message;
-      print('title = $title, message = $message');
-    });
+    }).catchError((error) {
+      normalDialog(context, 'กรุณากรอกข้อมูลใหม่');
+    });;
   }
 
   // Future<void> setupDisplayname() async {
@@ -143,7 +145,7 @@ class _SignupState extends State<Signup> {
         width: 250.0,
         child: TextField(
           onChanged: (value) => repassword = value.trim(),
-          decoration: InputDecoration(labelText: 'Repassword'),
+          decoration: InputDecoration(labelText: 'Confirm password'),
         ),
       );
 }
