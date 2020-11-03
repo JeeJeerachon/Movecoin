@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "364356052835",
+    "firebase_url": "https://movecoin-dc096.firebaseio.com",
+    "project_id": "movecoin-dc096",
+    "storage_bucket": "movecoin-dc096.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364356052835:android:8fb33aec30dfe3685d1556",
+        "android_client_info": {
+          "package_name": "com.example.movecoin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "364356052835-8id44lgbum1kiqoi4cv1389bk4cupvn5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6ml-z4Kv-U91mDJvON-coHGgAF4xHWlc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "364356052835-8id44lgbum1kiqoi4cv1389bk4cupvn5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
