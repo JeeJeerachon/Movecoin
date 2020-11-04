@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movecoin/screen/additem.dart';
+import 'package:movecoin/screen/item.dart';
 import 'package:movecoin/screen/home.dart';
 import 'package:movecoin/screen/login.dart';
 import 'package:movecoin/screen/signup.dart';
