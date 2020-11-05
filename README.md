@@ -1,4 +1,8 @@
 # movecoin
+วีดีโอแนะนำการใช้
+https://youtu.be/aBuCdBy6r58
+พัฒนาโดย
+นาย จีราชล ธรรมศร รหัสนิสิต 60020570
 แอปชันพัฒนาโดย Flutter
 1.หน้า Login เข้าแอปพลิเคชัน
 ![1](https://user-images.githubusercontent.com/55951306/98171200-f03f6380-1f21-11eb-9fe8-3b0ad214139a.jpg)
